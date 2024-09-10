@@ -10,10 +10,10 @@ from FlexiCubes import util
 class FlexiCubesRenderer:
     def __init__(self, force_cuda_rast):
 
-        if force_cuda_rast or os.name != 'nt':
-            self.glctx = dr.RasterizeCudaContext()
-        else:
-            self.glctx = dr.RasterizeGLContext()
+#        if force_cuda_rast or os.name != 'nt':
+         self.glctx = dr.RasterizeCudaContext()
+#        else:
+#            self.glctx = dr.RasterizeGLContext()
 
     def get_rotate_camera(self, itr, fovy = np.deg2rad(45), iter_res=[512,512], cam_near_far=[0.1, 1000.0], cam_radius=3.0, device="cuda"):
         proj_mtx = util.perspective(fovy, iter_res[1] / iter_res[0], cam_near_far[0], cam_near_far[1])

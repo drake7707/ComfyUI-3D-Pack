@@ -36,7 +36,7 @@ matplotlib
 # for process, import & export mesh 
 trimesh
 plyfile
-pygltflib
+pygltflib==1.16.2
 xatlas
 pymeshlab
 gpytoolbox
@@ -49,3 +49,8 @@ jaxtyping
 packaging
 OmegaConf
 pyhocon
+
+#for other shit
+dataclasses-json
+xformers==0.0.27.post2
+accelerator

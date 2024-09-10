@@ -499,10 +499,10 @@ def color_func_to_albedo(mesh, get_rgb_func, texture_resolution=1024, padding=2,
     from kiui.op import uv_padding
     
     if glctx is None:
-        if force_cuda_rast:
-            glctx = dr.RasterizeCudaContext()
-        else:
-            glctx = dr.RasterizeGLContext()
+#        if force_cuda_rast:
+        glctx = dr.RasterizeCudaContext()
+#        else:
+#            glctx = dr.RasterizeGLContext()
     
     # render uv maps
     h = w = texture_resolution

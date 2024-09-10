@@ -45,10 +45,10 @@ class GSConverterNeRFMarchingCubes(nn.Module):
         self.gaussians = self.gs_renderer.create_from_ply(gs_ply).to(self.device)
 
         # nerf renderer
-        if not self.opt.force_cuda_rast:
-            self.glctx = dr.RasterizeGLContext()
-        else:
-            self.glctx = dr.RasterizeCudaContext()
+#        if not self.opt.force_cuda_rast:
+#            self.glctx = dr.RasterizeGLContext()
+#        else:
+        self.glctx = dr.RasterizeCudaContext()
         
         self.step = 0
         self.render_step_size = 5e-3

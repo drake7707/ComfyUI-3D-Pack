@@ -106,7 +106,8 @@ async function main(filepath="") {
     if (/^.+\.[a-zA-Z]+$/.test(filepath)){
 
         let params = {"filepath": filepath};
-        currentURL = api.apiURL('/viewfile?' + new URLSearchParams(params));
+//        currentURL = api.apiURL('/viewfile?' + new URLSearchParams(params));
+        currentURL = api.fileURL('/extensions/ComfyUI-3D-Pack/html/viewfile?' + new URLSearchParams(params));
 
         var filepathSplit = filepath.split('.');
         var fileExt = filepathSplit.pop().toLowerCase();
@@ -119,7 +120,7 @@ async function main(filepath="") {
             var mtlFilepath = filepathNoExt.replace(/^.*[\\\/]/, '') + ".mtl";
 
             const mtlLoader = new MTLLoader();
-            mtlLoader.setPath(api.apiURL('/viewfile?' + new URLSearchParams({"filepath": mtlFolderpath})));
+            mtlLoader.setPath(api.apiURL('/extensions/ComfyUI-3D-Pack/html/viewfile?' + new URLSearchParams({"filepath": mtlFolderpath})));
             mtlLoader.load( mtlFilepath, function ( mtl ) {
                 mtl.preload();
                 loader.setMaterials( mtl );

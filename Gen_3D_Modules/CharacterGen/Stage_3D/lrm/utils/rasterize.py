@@ -13,12 +13,12 @@ class NVDiffRasterizerContext:
         self, context_type: str, device: torch.device
     ) -> Union[dr.RasterizeGLContext, dr.RasterizeCudaContext]:
         context_type = "cuda"  # This will throw: RuntimeError: Error building extension 'nvdiffrast_plugin', 'cl.exe' is not recognized as an internal or external command
-        if context_type == "gl":
-            return dr.RasterizeGLContext(device=device)
-        elif context_type == "cuda":
-            return dr.RasterizeCudaContext(device=device)
-        else:
-            raise ValueError(f"Unknown rasterizer context type: {context_type}")
+#        if context_type == "gl":
+#            return dr.RasterizeGLContext(device=device)
+#        elif context_type == "cuda":
+         return dr.RasterizeCudaContext(device=device)
+#        else:
+#            raise ValueError(f"Unknown rasterizer context type: {context_type}")
 
     def vertex_transform(
         self, verts: Float[Tensor, "Nv 3"], mvp_mtx: Float[Tensor, "B 4 4"]
